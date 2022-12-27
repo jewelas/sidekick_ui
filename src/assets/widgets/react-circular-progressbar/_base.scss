@@ -1,0 +1,71 @@
+// React circular progress
+
+.CircularProgressbar {
+  vertical-align: middle;
+  width: 90px;
+
+  .CircularProgressbar-path {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease 0s;
+  }
+
+  .CircularProgressbar-trail {
+    stroke-linecap: round;
+  }
+
+  .CircularProgressbar-text {
+    font-size: $font-size-base * 1.1;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    font-weight: bold;
+  }
+
+  &.circular-progress-xs {
+    width: 48px;
+
+    .CircularProgressbar-text {
+      font-size: $font-size-base * 1.6;
+    }
+  }
+
+  &.circular-progress-sm {
+    width: 62px;
+
+    .CircularProgressbar-text {
+      font-size: $font-size-base * 1.3;
+    }
+  }
+
+  &.circular-progress-lg {
+    width: 120px;
+  }
+
+  &.circular-progress-xl {
+    width: 140px;
+  }
+
+  &.circular-progress-xxl {
+    width: 180px;
+  }
+
+}
+
+@each $color, $value in $theme-colors {
+  .circular-progress-#{$color} {
+    .CircularProgressbar-path {
+      stroke: $value;
+    }
+
+    .CircularProgressbar-trail {
+      stroke: rgba($value, .1);
+    }
+
+    .CircularProgressbar-text {
+      fill: $value;
+    }
+
+    .CircularProgressbar-background {
+      fill: rgba($value, .05);
+    }
+  }
+}

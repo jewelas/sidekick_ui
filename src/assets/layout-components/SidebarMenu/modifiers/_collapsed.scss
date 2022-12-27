@@ -1,0 +1,85 @@
+// Collapsed Sidebar
+@include media-breakpoint-up(xs) {
+  .app-sidebar-collapsed {
+    .app-sidebar{
+      .app-sidebar--content {
+
+        .sidebar-navigation {
+
+          .sidebar-menu-box {
+            padding: ($layout-spacer / 6);
+
+            .sidebar-header {
+              // display: none;
+            }
+          }
+
+          .sidebar-header {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 0;
+            margin: ($layout-spacer / 2);
+
+            // &::after {
+            //   visibility: visible;
+            //   opacity: 1;
+            //   height: 1px;
+            //   content: '';
+            //   position: absolute;
+            //   width: 80%;
+            //   left: 10%;
+            // }
+
+            span {
+              // visibility: hidden;
+              // opacity: 0;
+              // height: 0;
+              // overflow: hidden;
+            }
+          }
+/*
+          ul {
+            li {
+
+              a {
+                font-size: 0;
+
+                .sidebar-icon {
+                  margin: 0 !important;
+                }
+
+                .sidebar-icon-indicator {
+                  opacity: 0;
+                  visibility: hidden;
+                  height: 0;
+                  width: 0;
+                  overflow: hidden;
+                  display: none;
+                }
+
+                .sidebar-item-label {
+                  opacity: 0;
+                  height: 0;
+                  overflow: hidden;
+                  width: 0;
+                  visibility: hidden;
+
+                  .badge {
+                    opacity: 0;
+                    visibility: hidden;
+                  }
+                }
+              }
+
+              ul {
+                height: 0;
+                padding: 0;
+                overflow: hidden;
+              }
+            }
+          }*/
+        }
+      }
+    }
+  }
+}

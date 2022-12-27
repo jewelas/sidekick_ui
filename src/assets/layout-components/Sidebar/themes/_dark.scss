@@ -1,0 +1,39 @@
+// Sidebar dark
+
+.app-sidebar {
+
+  &--overlay {
+    &:after {
+      content: '';
+      background: $black;
+      opacity: .45;
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    & > * {
+      z-index: 4;
+    }
+  }
+
+  &--dark {
+    background: $sidebar-bg;
+
+    &--content {
+      background: $sidebar-content-bg;
+    }
+
+    perfect-scrollbar > .ps.ps--scrolling-y > .ps__rail-y,
+    .ps .ps__rail-y:hover {
+      background-color: rgba($black,.05) !important;
+    }
+
+    .ps__thumb-y {
+      background-color: rgba($black,.15) !important;
+    }
+  }
+}

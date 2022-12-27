@@ -1,0 +1,82 @@
+//  Core
+
+.header-search-wrapper {
+  border-right: rgba($black, .1) solid 1px;
+  padding: ($spacer / 3.5) ($spacer) ($spacer / 3.5) 0;
+  margin: 0 ($spacer * 2) 0 0;
+  cursor: pointer;
+
+  .icon-wrapper {
+    position: absolute;
+    left: 12px;
+    top: 7px;
+    z-index: 10;
+  }
+
+  .search-wrapper {
+    .MuiFormControl-root {
+      padding: 0;
+      width: 42px;
+      opacity: 0;
+      transition: $transition-base;
+      cursor: pointer;
+    }
+
+    .MuiInputBase-root {
+      height: 36px;
+
+      input {
+        cursor: pointer;
+      }
+    }
+
+    &.is-active {
+      .MuiInputBase-root {
+
+        input {
+          cursor: text;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    border-left: rgba($black, .1) solid 1px;
+    border-right: transparent solid 1px;
+    padding: ($spacer / 3.5) ($spacer / 2);
+    margin: 0 $spacer;
+  }
+}
+
+.search-wrapper-open {
+  .header-search-wrapper {
+    border-right-color: transparent;
+
+    .search-wrapper {
+      .MuiFormControl-root {
+        padding: 0;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+
+        .MuiInputBase-input {
+          padding-left: 42px;
+        }
+      }
+    }
+  }
+
+  .app-header-widget {
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include media-breakpoint-down(md) {
+    .app-header--pane + .app-header--pane {
+      transform: scale(0);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

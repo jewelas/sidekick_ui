@@ -1,0 +1,384 @@
+//  Core
+
+.btn-wrapper--label:not(:first-child) {
+  margin-left: ($spacer / 2);
+}
+
+.btn-wrapper--label {
+  display: inline-block;
+
+  & + .btn-wrapper--icon {
+    margin-left: ($spacer / 2);
+  }
+}
+
+.btn-wrapper--icon {
+  display: inline-flex;
+}
+
+
+.MuiButton-root.btn-pill {
+  @include border-radius($border-radius-lg * 6);
+}
+
+body {
+  .MuiButton-root.Mui-disabled {
+    background: $gray-300;
+    box-shadow: none;
+    color: color-yiq($gray-300);
+  }
+}
+
+.MuiButton-root.btn-square {
+  @include border-radius(0px);
+}
+
+body {
+  .MuiButtonBase-root {
+    transition: $transition-base;
+
+    &.card.card-box {
+      & > .MuiTouchRipple-root {
+        opacity: .3;
+      }
+    }
+
+    &.Mui-disabled {
+      opacity: .65;
+    }
+
+    &:active {
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      .btn-icon-transition {
+        transform: scale(1.1);
+      }
+    }
+
+    &:not(.MuiListItem-button):not(.MuiTab-root):not(:disabled):not(.MuiCheckbox-root):not(.MuiSwitch-switchBase):hover {
+      transform: translateY(-2px);
+    }
+
+    &.btn-transition-none:hover {
+      transform: translateY(0px) !important;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .MuiButton-root.btn-#{$color} {
+    box-shadow: 0 0.25rem 0.55rem rgba($value, .35);
+    color: color-yiq($value);
+    background: $value;
+
+    &:not(:disabled).active,
+    &:not(:disabled).active:hover,
+    &:not(:disabled):active {
+      background: darken($value, 10%);
+    }
+
+    &:not(:disabled):active {
+      box-shadow: 0 0.22rem 0.525rem rgba($value, .4), 0 0.0625rem 0.385rem rgba($value, .54);
+    }
+
+    &:not(:disabled):hover {
+      background: $value;
+    }
+
+    &:not(:disabled).active,
+    &:hover {
+      .btn-wrapper--icon {
+        svg path {
+          fill: color-yiq($value);
+        }
+      }
+    }
+  }
+
+  .MuiButton-root.btn-outline-#{$color} {
+    background: transparent;
+    color: $value;
+    border: $value solid 2px;
+
+    &:not(:disabled):hover {
+      box-shadow: 0 0.22rem 0.525rem rgba($value, .4), 0 0.0625rem 0.385rem rgba($value, .54);
+    }
+
+    &:not(:disabled).active,
+    &:hover {
+      background: $value;
+      color: color-yiq($value);
+    }
+  }
+
+  .MuiButtonBase-root.btn-neutral-#{$color} {
+    background: transparentize($value, .85);
+    color: $value;
+    border-color: transparent;
+
+    @if $color == "secondary" {
+      color: color-yiq($value);
+    }
+
+    &.active,
+    &:hover {
+      background: $value;
+      color: color-yiq($value);
+
+      .btn-wrapper--icon {
+        svg path {
+          fill: color-yiq($value);
+        }
+      }
+    }
+  }
+
+  .btn-link-#{$color} {
+
+    span {
+      color: $value;
+
+      &::before {
+        background-color: $value;
+      }
+    }
+
+    &:hover {
+      span {
+        color: darken($value, 10%);
+      }
+    }
+  }
+}
+
+@each $color, $value in $brand-colors {
+  .MuiButton-root.btn-#{$color} {
+    @include button-variant($value, $value);
+    box-shadow: 0 0.25rem 0.55rem rgba($value, .35);
+
+    &:not(:disabled).active,
+    &:not(:disabled).active:hover,
+    &:not(:disabled):active {
+      background: darken($value, 5%);
+    }
+
+    &:not(:disabled):not(.active):active {
+      box-shadow: 0 0.22rem 0.525rem rgba($value, .4), 0 0.0625rem 0.385rem rgba($value, .54);
+    }
+  }
+}
+
+.btn-link {
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  span {
+    position: relative;
+    transition: $transition-base;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+
+  &:hover {
+    span:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.MuiButton-root.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    transform: none;
+  }
+
+  &:active {
+    text-decoration: $link-hover-decoration;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+}
+
+// Gradients
+
+body {
+
+  .MuiButton-root.btn-gradient {
+    border: 0;
+    position: relative;
+    color: $white;
+
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: $white;
+      opacity: 0;
+      transition: $transition-base;
+      content: '';
+    }
+
+    &:active,
+    &:hover {
+      color: $white;
+
+      &::after {
+        opacity: .15;
+      }
+    }
+  }
+
+  .MuiButton-root.btn-gradient-inverse {
+    color: $black;
+
+  &:active,
+  &:hover {
+    color: $black !important;
+  }
+  }
+}
+
+// Transparent
+
+.MuiButton-root.btn-transparent {
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+// Icons
+
+.btn-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+}
+
+.btn-animated-icon-sm,
+.btn-animated-icon {
+  transition: all 0.35s;
+  overflow: hidden;
+  position: relative;
+
+  .btn-wrapper--icon {
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform .3s;
+
+    & > * {
+      transition: none;
+    }
+  }
+
+  &:hover {
+    .btn-wrapper--icon {
+      transform: scale(1.4);
+    }
+  }
+}
+
+.btn-animated-icon-sm:hover {
+  .btn-wrapper--icon {
+    transform: scale(1.2);
+  }
+}
+
+// Button input select
+
+.btn-input-select {
+  border: $gray-400 solid 2px;
+  @include border-radius($border-radius);
+  transition: $btn-transition;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: ($spacer) ($spacer * 2) ($spacer / 2);
+
+  .selected-icon {
+    opacity: 0;
+    @include border-radius(100%);
+    visibility: hidden;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-base;
+    background: $success;
+    color: $white;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    border: $white solid 2px;
+  }
+
+  &:hover {
+    border-color: $gray-700;
+    color: $black !important;
+    background: $gray-100;
+  }
+
+  &.active {
+    border-color: $success;
+    background: $white;
+
+    &:hover {
+      background: $white;
+    }
+
+    .selected-icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// Button loading
+
+.btn-loading-wrapper {
+  position: relative;
+
+  .MuiCircularProgress-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.MuiButton-root.Mui-disabled {
+  opacity: .3;
+  color: transparent;
+}
+

@@ -1,0 +1,13 @@
+//  Core
+
+.app-header-widget {
+  position: relative;
+  transition: $transition-base;
+  transform: scale(1);
+  visibility: visible;
+  transition-delay: .2s;
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}

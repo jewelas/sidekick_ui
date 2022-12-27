@@ -1,0 +1,21 @@
+//  Core
+
+.app-sidebar-spacer {
+  padding: 0 ($layout-spacer / 2) ($layout-spacer / 2);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: $transition-base;
+  opacity: 1;
+  visibility: visible;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+// Modifiers
+
+@import "modifiers/collapsed";
+
+// Themes
+
+@import "themes/dark";

@@ -1,0 +1,173 @@
+//  Core
+
+.search-wrapper {
+  position: relative;
+  transition: $transition-base;
+
+  .MuiOutlinedInput-notchedOutline {
+    border-width: 2px;
+  }
+
+  .MuiTextField-root {
+    border-width: 2px;
+    transition: $transition-base;
+    background: $gray-100;
+  }
+
+  &:hover {
+    .MuiTextField-root {
+      background: $gray-200;
+      border-color: darken($input-border-color, 5%);
+    }
+  }
+
+  &.is-active {
+    .MuiTextField-root {
+      background: $white;
+      border-color: $primary;
+    }
+
+    .icon-wrapper {
+      opacity: .8;
+    }
+  }
+
+  &--grow {
+    .MuiTextField-root {
+      width: 200px;
+    }
+
+    &:hover {
+      .MuiTextField-root {
+        width: 210px;
+      }
+    }
+
+    &.is-active {
+      .MuiTextField-root {
+        width: 100%;
+      }
+    }
+  }
+
+  &--alternate {
+    .MuiOutlinedInput-notchedOutline {
+      background: transparent;
+      border-color: transparent;
+    }
+
+    .MuiTextField-root {
+      background: transparent;
+    }
+  }
+
+  .search-options {
+    position: absolute;
+    text-align: right;
+    top: 5px;
+    z-index: 22;
+    right: 15px;
+
+    div {
+      position: relative;
+      display: inline-block;
+      margin: 4px 5px 0;
+      cursor: pointer;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.01;
+        cursor: pointer;
+      }
+
+      span {
+        position: absolute;
+        display: block;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        background: $gray-900;
+        color: $gray-100;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 6px 15px;
+        border-radius: 8px;
+        top: -22px;
+        transition: all .2s ease-in-out;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 8px solid $gray-900;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          transition: all .2s ease-in-out;
+        }
+      }
+
+      &:hover span {
+        opacity: 1;
+        top: -32px;
+      }
+
+      label {
+        display: block;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      svg {
+        opacity: .6;
+      }
+
+      &:hover svg {
+        opacity: 1;
+      }
+
+      input:checked + label svg {
+        opacity: .9;
+        path {
+          fill: $primary !important;
+        }
+      }
+
+      input:checked + label span {
+        background: $primary;
+
+        &::after {
+          border-top-color: $primary;
+        }
+      }
+    }
+  }
+
+  &--expandable {
+    width: 44px;
+    cursor: pointer;
+
+    .MuiOutlinedInput-adornedStart {
+      padding-left: 10px;
+    }
+
+    &.is-active,
+    &:active,
+    &:focus,
+    &:hover {
+      width: 100%;
+    }
+  }
+
+  .input-border-0 {
+    .MuiOutlinedInput-notchedOutline {
+      border: 0;
+    }
+  }
+}

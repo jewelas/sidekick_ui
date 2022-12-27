@@ -1,0 +1,132 @@
+//  Core
+
+.hero-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .header-top-section {
+    z-index: 28;
+    width: 100%;
+    position: relative;
+  }
+
+  & > .divider,
+  .hero-footer {
+    z-index: 7;
+  }
+
+  .header-nav-wrapper {
+    z-index: 27;
+  }
+
+  & > .divider {
+    width: 100%;
+  }
+
+  &--content {
+    flex-grow: 1;
+    display: flex;
+    z-index: 6;
+    width: 100%;
+    align-items: center;
+  }
+
+  .bg-composed-wrapper--image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .hero-indicator {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    text-align: center;
+    left: 50%;
+    margin-left: -20px;
+    bottom: ($spacer * 2);
+  }
+}
+
+// Shapes
+
+.shape-container-top-1 {
+  margin-top: -150px;
+  z-index: 6;
+  position: relative;
+}
+
+.shape-container-top-2 {
+  margin-top: -100px;
+  z-index: 6;
+  position: relative;
+}
+
+.shape-container-bottom-1 {
+  margin-bottom: -150px;
+  z-index: 6;
+  position: relative;
+}
+
+.shape-container-bottom-2 {
+  margin-bottom: -100px;
+  z-index: 6;
+  position: relative;
+}
+
+.shadow-container-blocks-1 {
+  margin-top: -300px;
+
+  @include media-breakpoint-down(lg) {
+    margin-top: -170px;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-top: -145px;
+  }
+}
+
+.shadow-container-blocks-2 {
+  margin-top: -350px;
+
+  @include media-breakpoint-down(lg) {
+    margin-top: -250px;
+  }
+}
+
+.shadow-container-blocks-3 {
+  margin-top: -300px;
+
+  @include media-breakpoint-down(md) {
+    margin-top: -160px;
+  }
+}
+
+.shadow-container-blocks-4 {
+  margin-top: -50px;
+
+  @include media-breakpoint-down(md) {
+    margin-top: -150px;
+  }
+}
+
+.shadow-container-content-5 {
+  padding-bottom: 165px;
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 120px;
+  }
+}
+
+.shadow-container-blocks-5 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  @include media-breakpoint-down(md) {
+
+  }
+}
+

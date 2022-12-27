@@ -1,0 +1,51 @@
+// Tree View
+
+.treeview-primary.MuiTreeView-root {
+  .MuiTreeItem-root {
+    margin: 2px 0;
+
+    .MuiTreeItem-content {
+      padding: ($spacer / 4 ) ($spacer / 2);
+      @include border-radius($border-radius-sm);
+      transition: $transition-base;
+      color: $white;
+
+      &:hover {
+        background: rgba($primary, .08);
+        color: $white;
+      }
+    }
+
+    &:focus {
+      & > .MuiTreeItem-content {
+        background: rgba($primary, .6);
+        color: $white;
+      }
+    }
+  }
+}
+
+.treeview-alt.MuiTreeView-root {
+  .MuiTreeItem-root {
+    margin: 2px 0;
+
+    .MuiTreeItem-content {
+      padding: ($spacer / 4 ) ($spacer / 2);
+      @include border-radius($border-radius-sm);
+      transition: $transition-base;
+      color: $body-color;
+
+      &:hover {
+        background: $gray-200;
+        color: $primary;
+      }
+    }
+
+    &:focus {
+      & > .MuiTreeItem-content {
+        background: $gray-300;
+        color: $black;
+      }
+    }
+  }
+}

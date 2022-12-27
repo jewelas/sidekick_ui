@@ -1,0 +1,106 @@
+// Tables
+
+.table {
+  font-size: $font-size-base;
+
+  thead th {
+    text-transform: uppercase;
+    background: $gray-200;
+    font-size: $font-size-sm;
+    vertical-align: middle;
+  }
+
+  tr {
+    transition: $transition-base;
+  }
+
+  td, th {
+    vertical-align: middle;
+  }
+
+  &.table-alternate {
+    thead th {
+      text-transform: none;
+      background: transparent;
+      font-size: $font-size-base * 1.1;
+      font-weight: normal;
+      color: $gray-900;
+    }
+  }
+
+  &.table-alternate-spaced {
+    border: 0;
+
+    thead {
+      th {
+        background: transparent;
+        font-weight: bold;
+        background: none;
+        font-size: $font-size-sm / 1.1;
+        border: 0;
+        padding-top: 0;
+        padding-bottom: ($spacer / 1.5);
+      }
+    }
+
+    tbody {
+
+      tr {
+        background: transparent;
+
+        &:hover {
+          td::before {
+            background: $table-hover-bg;
+          }
+        }
+
+        td {
+          background: transparent;
+          position: relative;
+
+          & > * {
+            position: relative;
+            z-index: 3;
+          }
+
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: $transition-base;
+            height: 100%;
+            width: 100%;
+            content: '';
+            background: $white;
+            border-top: $gray-400 solid 1px;
+            border-bottom: $gray-400 solid 1px;
+            pointer-events: none;
+          }
+
+          &:first-child {
+            &::before {
+              @include border-left-radius($border-radius-lg);
+              border-left: $gray-400 solid 1px;
+            }
+          }
+          &:last-child {
+            &::before {
+              @include border-right-radius($border-radius-lg);
+              border-right: $gray-400 solid 1px;
+            }
+          }
+        }
+
+        &.divider {
+          height: $spacer;
+        }
+      }
+
+      td {
+        border: 0;
+      }
+    }
+  }
+
+
+}

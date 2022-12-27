@@ -1,0 +1,60 @@
+// Sidebar dark
+
+.app-sidebar {
+
+  &--dark {
+    .app-sidebar--header {
+      background: transparent;
+
+      .collapse-sidebar-btn {
+        background: transparent;
+        color: rgba($white, .8);
+        opacity: 1;
+
+        &:hover {
+          background: rgba($black, .2);
+          color: $white;
+        }
+      }
+      .expand-sidebar-btn {
+        border: $white solid 2px;
+        background: $white;
+        color: $primary;
+        box-shadow: $box-shadow-sm;
+      }
+      &::after {
+        background: rgba($white, .15);
+      }
+    }
+
+    // Logo wrapper
+
+    .app-sidebar-logo {
+      &--icon {
+        // background: $white;
+        // box-shadow: 1px 1px 3px rgba($black, .2);
+      }
+
+      &--text {
+        span {
+          color: $white;
+          opacity: .7;
+        }
+
+        b {
+          color: $white;
+        }
+      }
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    .hamburger-inner,
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+      background: $white !important;
+    }
+  }
+}

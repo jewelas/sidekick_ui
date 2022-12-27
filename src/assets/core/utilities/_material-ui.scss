@@ -1,0 +1,474 @@
+// Material UI Helpers
+body {
+  .MuiButtonBase-root {
+    min-width: 0;
+    outline: none !important;
+  }
+
+  .MuiButton-root {
+    line-height: initial;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .MuiPaper-root {
+    color: $body-color;
+  }
+}
+
+.MuiGrid-item,
+.MuiPaper-root {
+  position: relative;
+}
+@include media-breakpoint-down(lg) {
+  .MuiGrid-item {
+    width: 100%;
+  }
+}
+
+.MuiCard-root {
+  transition: $transition-base;
+}
+
+a.MuiButton-outlined:hover {
+  color: initial;
+}
+
+.min-w-auto {
+  min-width: 5px !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-hidden {
+  outline: none !important;
+}
+
+.MuiButton-root.btn-inverse:hover {
+  background-color: $sksecondary;
+}
+
+// Custom spacing
+
+.mb-spacing-6 {
+  margin-bottom: 24px;
+}
+
+.mb-spacing-6-x2 {
+  margin-bottom: 48px;
+}
+
+// Forms
+
+body {
+
+  .MuiOutlinedInput-notchedOutline {
+    transition: $transition-base;
+  }
+
+  .MuiOutlinedInput-root:hover {
+    .MuiOutlinedInput-notchedOutline {
+      border-color: #2ebc7f;
+    }
+  }
+  
+  svg.MuiSvgIcon-root {
+    fill: white;
+  }
+
+  .MuiInputLabel-outlined.MuiInputLabel-marginDense {
+    color: white;
+  }
+
+  .MuiIconButton-root:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .MuiTouchRipple-child {
+    background-color: white;
+  }
+
+  .MuiTableCell-sizeSmall {
+    padding: 5px 0 5px 6px;
+  }
+
+  .MuiTableCell-stickyHeader {
+    background: $first;
+  } 
+
+  .MuiTableSortLabel-root:focus {
+    color: rgba(73, 226, 135, 0.54);
+  }
+
+  .MuiTableSortLabel-root:hover {
+    color: rgba(73, 226, 135, 0.54);
+  }
+  
+  .MuiTableSortLabel-root.MuiTableSortLabel-active {
+    color: rgba(73, 226, 135, 0.87);
+  }
+
+  .MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+    color: rgba(73, 226, 135, 0.54);
+    opacity: 1;
+  }
+
+  .MuiTableSortLabel-root:hover .MuiTableSortLabel-icon {
+    opacity: 0.5;
+  }
+
+  .MuiTableRow-root {
+    color: white !important;
+  }
+
+  .MuiTableRow-root.MuiTableRow-hover:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .MuiTableRow-root.Mui-selected, .MuiTableRow-root.Mui-selected:hover {
+    background-color: rgba(46, 188, 126, 0.30);
+  }
+
+  .MuiTableCell-root {
+    font-family: 'Rubik',sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+    cursor: pointer;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .MuiTableCell-root {
+      font-size: 0.675rem;
+      padding: 7px 0px 7px 5px;
+    }
+  }
+
+  th.MuiTableCell-root.MuiTableCell-head.stickyHeader{
+    border-bottom: 1px solid #1d2b72 !important;
+  }
+
+  .MuiTableCell-root.MuiTableCell-body.cell-rank.MuiTableCell-alignLeft{
+    width: 20px !important;
+  }
+
+  .tableHeight-portfolio {
+    height: 215px;
+  }
+
+  .tableHeight-headquarters {
+    height: 215px;
+  }
+
+  .tableHeight-defiwatcher {
+    height: 330px;
+    min-height: 330px;
+  }
+
+  .tableHeight-topBuyers {
+    height: 330px;
+  }
+
+  .tableHeight-topBuyers-drip {
+    height: 335px;
+  }
+
+  .dripTableMaxHeight {
+    max-height: 300px;
+  }
+
+  .stickyHeader {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    position: sticky;
+    background-color: $first;
+  }
+
+  .MuiTableCell-head {
+    color: rgba(255, 255, 255, .87);
+  }
+
+  .MuiTableCell-body {
+    color: rgba(255, 255, 255, .87);    
+  }
+  
+  .MuiTableCell-footer {
+    color: rgba(255, 255, 255, .54);
+  }
+
+  .MuiTablePagination-root {
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .MuiInputBase-root { /*TIRED ALAN */
+    color: rgba(255, 255, 255, 0.87);
+    font-family: 'Rubik', sans-serif;
+  }
+
+  .MuiInputBase-root.Mui-disabled {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: default;
+  }
+  
+  .MuiInputBase-input {
+    font: inherit;
+    color: currentColor;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    padding: 10px 0 10px;
+    min-width: 0;
+    background: none;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .MuiInputBase-input::-webkit-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  .MuiInputBase-input::-moz-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  .MuiInputBase-input:-ms-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  .MuiInputBase-input::-ms-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
+    background-color: rgba(46, 188, 126, 0.30);
+  }
+
+  .MuiListItem-button:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .MuiMenu-list, .MuiListItem-button {
+    background-color: $primary;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .MuiInput-underline:after {
+    border-bottom-color: $sksecondary;
+  }
+  
+  .MuiInput-underline:before {
+    border-bottom-color: white;
+  }
+
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid #2ebc7f;
+  }
+
+  .MuiTablePagination-toolbar {
+    padding: 0;
+    margin-top: .5rem;
+    min-height: 30px !important;
+  }
+
+  p.MuiTypography-root.MuiTablePagination-caption.MuiTypography-body2, .MuiSelect-root.MuiSelect-select.MuiTablePagination-select.MuiSelect-selectMenu.MuiInputBase-input, .MuiList-root.MuiMenu-list {
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  .MuiList-root .MuiListItem-root.MuiListItem-button {
+    font-weight: bold;  
+  }
+
+  .MuiTablePagination-selectRoot {
+    margin-right: .25rem;
+  }
+
+  .MuiTablePagination-actions {
+    margin-left: .1rem;
+  }
+ 
+  .MuiAutocomplete-listbox {
+    overflow: hidden;
+  }
+
+  /*Abbreviate Rows per page to Rows*/
+  p.MuiTypography-root.MuiTablePagination-caption.MuiTypography-body2.MuiTypography-colorInherit:nth-child(2) {
+    width: 2.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .app-content--inner {
+    padding-bottom: 0;
+    padding-top: 1.0em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .MuiGrid-item{
+    padding-top: 0 !important;
+  }
+
+  .skTabs .MuiTabs-scroller{
+    background: $primary;
+    height: 4rem;
+    border-radius: .75rem;
+  }
+
+  .skTabs .MuiTabs-indicator {
+    display: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .skTabBtn {
+      width: 33%;
+    }
+  }
+  
+  .MuiTabs-root .MuiTab-root.skTabBtn .MuiTouchRipple-root {
+    border-radius: .5rem !important;
+  }
+  
+  .MuiTabs-root .MuiTab-root.skTabBtn {
+    border-radius: .5rem .5rem 0 0 !important;
+    color: white !important;
+  }
+
+  .MuiTabs-root .MuiTab-root.skTabBtn:hover {
+    color: rgba(46, 188, 126, 0.6) !important;
+  } 
+
+  .MuiTabs-root .MuiTab-root.skTabBtn.skSelected.Mui-selected {
+    color: $sksecondary !important;
+  }
+
+  .MuiTabs-root .MuiTab-root.skTabBtn.Mui-disabled {
+    color: $gray-800 !important;
+  }
+  
+  .card-header .MuiButton-root.MuiButton-root {
+     background-color: $primary !important;
+     border: none;
+  }
+
+  .accordion-toggle .MuiButtonBase-root.MuiButton-root:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .skAccordian span.MuiButton-label {
+    font-size: .9rem !important;
+  }
+
+  .card-box .skAccordian.MuiButton-root {
+    color: white;
+    background: $skprimary !important;
+    border: none !important;
+
+  }
+
+  .MuiButtonBase-root.MuiButton-root.MuiButton-text.d-flex.align-items-center.justify-content-between.btn-transition-none.skAccordian.MuiButton-textSizeLarge.MuiButton-sizeLarge:hover {
+    color: $white ;
+    background-color:#263378 !important;
+    border: none !important;
+
+  }
+
+   .panel-open button.MuiButtonBase-root.MuiButton-root.MuiButton-text.d-flex.align-items-center.justify-content-between.btn-transition-none.skAccordian  {
+    color: $sksecondary !important;
+    font-weight: bold;
+    background-color: $skprimary !important;
+    border: none !important;
+    border-radius: 0;
+  }
+
+  .panel-open button.MuiButtonBase-root.MuiButton-root.MuiButton-text.d-flex.align-items-center.justify-content-between.btn-transition-none.skAccordian:hover {
+    color: $sksecondary !important;
+    background: #215776 !important;
+  }
+
+  .textRed {
+    color: red !important;
+  }
+
+  .trashBtn {
+    position: absolute;
+    right: .5rem;
+    z-index: 2;
+  }
+
+  .grid-menu .MuiGrid-item.noBorders {
+    border: none !important;
+  }
+
+  .MuiSwitch-root.toggle-switch-second .Mui-checked .MuiSwitch-thumb{
+    background: $skdarkgreen;
+  }
+
+  .skDP span.MuiFormControlLabel-label{
+    font-weight: bold;
+    margin: .5rem 0 0 0;
+  }
+
+  .skTransFilter .MuiList-padding {
+    padding: 0;
+  }
+
+  .MuiSlider-valueLabel {
+    left: auto;
+  }
+  
+  .MuiButton-label .accordianWalletID {
+    max-width: 89%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .MuiButton-root.btn-light:not(:disabled).active .btn-wrapper--icon svg path, .MuiButton-root.btn-light:hover .btn-wrapper--icon svg path {
+    fill: inherit;
+  }
+
+  .skContentMargin .MuiTypography-body1 {
+    font-family: 'Rubik',sans-serif;
+    font-style: italic;
+    color: $primary;
+  }
+
+  .skContentMargin .MuiTypography-body1:last-child {
+    font-style: normal;
+    opacity: 0.5;
+  }
+
+  .MuiButtonBase-root {
+    font-family: 'Rubik', sans-serif;
+  }
+
+  .MuiListItem-button {
+    text-align: center;
+  }
+
+  .MuiList-root.nav-tabs-secondary.nav-line .MuiListItem-root.MuiListItem-button.Mui-selected, .MuiList-root.nav-tabs-secondary.nav-line .MuiListItem-root.MuiListItem-button.Mui-selected:hover {
+    color: $sksecondary;
+  }
+
+  .MuiList-root.nav-line .MuiListItem-root.MuiListItem-button:hover {
+    color: $sksecondary;
+    background: transparent;
+  }
+
+}

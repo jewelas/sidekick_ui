@@ -1,0 +1,41 @@
+//  Core
+
+.MuiInputBase-root:not(.MuiInput-underline) {
+  transition: $transition-base;
+
+  &.Mui-focused {
+    box-shadow: $input-focus-box-shadow;
+  }
+}
+
+body {
+  .MuiTextField-root.text-white-50 {
+    .MuiInputBase-root,
+    .MuiInputLabel-root {
+      color: rgba($white, .8);
+    }
+
+    .MuiOutlinedInput-root,
+    .MuiOutlinedInput-notchedOutline {
+      border-color: rgba($white, .5);
+
+      &:hover {
+        border-color: rgba($white, .8);
+      }
+    }
+  }
+
+  .MuiChip-root {
+    background: $primary;
+    color: color-yiq($primary);
+
+    .MuiChip-deleteIcon {
+      color: color-yiq($primary);
+    }
+
+    &.Mui-disabled {
+      opacity: .65;
+    }
+  }
+}
+

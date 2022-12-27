@@ -1,0 +1,130 @@
+// Variables
+
+$progress-bar-xs-height: .3rem;
+$progress-bar-sm-height: .52rem;
+$progress-bar-lg-height: 1.2rem;
+$progress-bar-height: 1rem;
+
+$progress-bar-animated-color: $white;
+
+//  Core
+
+body {
+  .MuiLinearProgress-root {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    @include border-radius($progress-border-radius);
+    height: $progress-bar-height;
+
+    &.MuiLinearProgress-query {
+      box-shadow: none;
+    }
+
+    &.progress-xs {
+      height: $progress-bar-xs-height;
+    }
+
+    &.progress-sm {
+      height: $progress-bar-sm-height;
+    }
+
+    &.progress-lg {
+      height: $progress-bar-lg-height;
+    }
+
+    .MuiLinearProgress-bar {
+      @include border-radius($progress-border-radius);
+
+      &:last-child {
+        @include border-right-radius($progress-border-radius);
+      }
+    }
+
+    &.progress-bar-rounded {
+      @include border-radius(30px);
+
+
+      .MuiLinearProgress-bar:last-child {
+        @include border-right-radius(30px);
+      }
+    }
+
+    &.progress-animated-alt {
+      .MuiLinearProgress-bar {
+        &::after {
+          content: '';
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: $progress-bar-animated-color;
+          animation: progress-active 2s ease infinite;
+        }
+      }
+    }
+
+    &.progress-constrained {
+      height: 24px;
+      padding: 0 24px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .MuiLinearProgress-bar {
+        height: 8px;
+        position: relative !important;
+      }
+    }
+  }
+}
+
+@keyframes progress-active {
+  0% {
+    opacity: .4;
+    width: 0
+  }
+  100% {
+    opacity: 0;
+    width: 100%
+  }
+}
+
+// Gauges
+
+
+
+@each $color, $value in $theme-colors {
+
+  .MuiLinearProgress-root.progress-bar-#{$color} {
+    background: $gray-200;
+
+    .MuiLinearProgress-bar {
+      background: $value;
+    }
+
+    &.MuiLinearProgress-query {
+      background: rgba($value, .1);
+    }
+  }
+
+  .MuiLinearProgress-determinate.progress-bar-#{$color} {
+    background: rgba($value, .1);
+  }
+
+  .MuiCircularProgress-root.progress-bar-#{$color} {
+    color: $value;
+  }
+}
+
+.MuiLinearProgress-root.progress-bar-white {
+  background: rgba($white, .3);
+
+  .MuiLinearProgress-bar {
+    background: $white;
+  }
+
+  &.MuiLinearProgress-query {
+    background: rgba($white, .1);
+  }
+}

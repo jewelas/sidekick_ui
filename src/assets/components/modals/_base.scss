@@ -1,0 +1,37 @@
+//  Core
+
+body {
+  .modal-content {
+    box-shadow: $modal-content-box-shadow-xs;
+  }
+}
+
+.MuiDialog-paper {
+
+  .MuiDialogTitle-root {
+    border-bottom: $gray-400 solid 1px;
+
+    & > .MuiTypography-root {
+      font-weight: bold;
+      font-size: $font-size-lg;
+    }
+
+  }
+
+  .MuiDialogActions-root {
+    border-top: $gray-400 solid 1px;
+  }
+
+  &.modal-dark {
+    color: $white;
+
+    .MuiDialogContentText-root {
+      color: $white;
+    }
+
+    .MuiDialogActions-root,
+    .MuiDialogTitle-root {
+      border-color: rgba(255,255,255, .1);
+    }
+  }
+}

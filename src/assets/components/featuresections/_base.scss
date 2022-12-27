@@ -1,0 +1,48 @@
+//  Core
+.feature-box-img {
+  position: relative;
+  border: $black solid 5px;
+  background: $white;
+  @include border-radius($border-radius-lg);
+
+  @include media-breakpoint-up(xl) {
+    margin-left: -($spacer * 5);
+  }
+}
+
+.img-outer-bounds-sm {
+  @include media-breakpoint-up(xl) {
+    position: relative;
+    left: -50px;
+    transform: scale(1.6);
+    width: 100%;
+
+    &.text-right {
+      left: auto;
+      right: -50px;
+    }
+  }
+}
+
+.icon-blob {
+  position: relative;
+
+  .blob-icon-wrapper,
+  .blob-wrapper {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .blob-icon-wrapper {
+    font-size: $font-size-xl;
+
+    svg {
+      height: 25%;
+      width: 25%;
+    }
+  }
+}
+

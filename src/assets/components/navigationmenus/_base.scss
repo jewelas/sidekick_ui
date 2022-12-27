@@ -1,0 +1,565 @@
+// Variables
+
+$nav-item-icon-size:              16px;
+$nav-item-header-color:           $gray-700;
+$nav-item-header-font-size:       $font-size-sm;
+
+$nav-item-link-bg:                transparent;
+$nav-item-link-color:             $gray-800;
+
+$nav-item-link-active-bg:         $gray-200;
+$nav-item-link-active-color:      $primary;
+//  Core
+
+.grid-menu {
+
+  .MuiGrid-item {
+    border-right: $border-color solid 1px;
+    border-bottom: $border-color solid 1px;
+    position: relative;
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    .MuiGrid-item:nth-last-child(-n+2) {
+      border-bottom-width: 1px;
+    }
+
+    .MuiGrid-item:nth-child(1n) {
+      border-right-width: 1px;
+    }
+
+    .MuiGrid-item:nth-child(2n) {
+      border-right-width: 0;
+    }
+  }
+
+  .MuiGrid-item:nth-last-child(-n+1) {
+    border-bottom-width: 0;
+  }
+
+  &.grid-menu-3col {
+
+    @include media-breakpoint-up(lg) {
+
+      .MuiGrid-item:nth-last-child(-n+3) {
+        border-bottom-width: 0;
+      }
+
+      .MuiGrid-item:nth-child(2n) {
+        border-right-width: 1px;
+      }
+
+      .MuiGrid-item:nth-child(3n) {
+        border-right-width: 0;
+      }
+    }
+  }
+
+  & > .btn {
+    display: block;
+    border: 0;
+    min-width: 100%;
+  }
+}
+
+// Grid dividers
+
+.divider-v {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  min-height: 26px;
+  right: 0;
+  width: 1px;
+  background: $border-color;
+  overflow: hidden;
+
+  @include media-breakpoint-down(lg) {
+    &.divider-v-lg {
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      min-height: 1px;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &.divider-v-md {
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      min-height: 1px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &.divider-v-md {
+      display: none;
+    }
+  }
+}
+
+.MuiList-root {
+  .MuiListItem-root {
+    margin: 2px 0;
+
+    &.MuiListItem-button {
+      @include border-radius($border-radius-sm);
+      transition: $transition-base;
+    }
+  }
+
+  &.nav-tabs {
+    padding: 0 ($spacer / 1.5);
+    border-bottom: $gray-500 solid 1px;
+
+    .MuiListItem-root.MuiListItem-button {
+      padding: ($spacer / 1.5) ($spacer * 1.5);
+      margin: 2px ($spacer / 1.5) 0 0;
+      border: transparent solid 1px;
+      @include border-bottom-radius(0);
+      font-size: $font-size-sm;
+      text-transform: uppercase;
+      color: $gray-700;
+      background: transparent;
+      transition: $transition-base;
+      cursor: pointer;
+      width: auto;
+
+      &:hover {
+        color: $black;
+        background: transparent;
+        border-color: $gray-500;
+        border-bottom-color: transparent;
+      }
+
+      &.Mui-selected {
+        margin-top: 0;
+        margin-bottom: -1px;
+        color: $primary;
+        background: $white;
+        border-color: $gray-500;
+        border-bottom-color: $white;
+        border-top: $primary solid 3px;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &.nav-line {
+    .MuiListItem-root.MuiListItem-button {
+        color: $gray-700;
+        position: relative;
+        transition: $transition-base;
+        padding: 0 $spacer $spacer;
+        background: transparent;
+        width: auto;
+
+        .divider {
+          width: 34px;
+          @include border-radius($border-radius-lg);
+          height: 3px;
+          background: $primary;
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: $transition-base;
+          position: absolute;
+          left: $spacer;
+          bottom: 0;
+        }
+
+        &:hover {
+          color: $black;
+          background: transparent;
+        }
+
+        &.Mui-selected {
+          color: $primary;
+          background: transparent;
+
+          &:hover {
+            color: $primary;
+          }
+
+          .divider {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+    }
+
+    &.nav-line-alt {
+        position: relative;
+        z-index: 4;
+        padding: 0;
+
+        &::after {
+          background: $gray-200;
+          height: 3px;
+          @include border-radius($border-radius-lg);
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          content: "";
+          z-index: 5;
+        }
+
+      .MuiListItem-root.MuiListItem-button + .MuiListItem-root.MuiListItem-button {
+          margin-left: ($spacer * 2);
+        }
+
+      .MuiListItem-root.MuiListItem-button {
+            padding: 0 0 $spacer;
+            margin: 0;
+
+            .divider {
+              z-index: 8;
+              left: 0;
+              width: 100%;
+            }
+          }
+    }
+  }
+
+  &.nav-fill {
+    .MuiListItem-root {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+  }
+
+  &.nav-justified {
+    .MuiListItem-root.MuiListItem-button {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: ($layout-spacer / 8);
+      margin-right: ($layout-spacer / 8);
+    }
+  }
+
+ &.tabs-animated {
+
+    &.nav-tabs {
+      border: 0;
+      padding: 0;
+
+      .MuiListItem-root.MuiListItem-button {
+        border: 0 !important;
+        position: relative;
+        padding: ($layout-spacer / 4) ($layout-spacer / 2);
+        margin: 0 ($layout-spacer / 4) 0 0;
+        color: $body-color;
+        text-transform: none;
+        font-size: $font-size-base;
+        cursor: pointer;
+        width: auto;
+
+        &::before {
+          transform: scale(0);
+          opacity: 1;
+          width: 100%;
+          left: 0;
+          bottom: -2px;
+          content: "";
+          position: absolute;
+          display: block;
+          @include border-radius($border-radius-lg);
+          background: $primary;
+          transition: all .2s;
+          height: 4px;
+        }
+
+        &.Mui-selected,
+        &:hover {
+          color: $primary;
+          border: 0;
+
+          &::before {
+            transform: scale(1);
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &.tabs-animated-shadow {
+    &.nav-tabs {
+      position: relative;
+      z-index: 9;
+
+      .MuiListItem-root.MuiListItem-button {
+        padding: ($layout-spacer / 4) ($layout-spacer / 2);
+        margin-bottom: ($layout-spacer / 4);
+        cursor: pointer;
+
+        & > span:not(.MuiTouchRipple-root) {
+          position: relative;
+          z-index: 5;
+          display: inline-block;
+          width: 100%;
+        }
+
+        &::before {
+          height: 100%;
+          top: 0;
+          z-index: 4;
+          bottom: auto;
+          box-shadow: 0 16px 26px -10px rgba($primary, 0.56),
+          0 4px 25px 0px rgba(0, 0, 0, 0.12),
+          0 8px 10px -5px rgba($primary, 0.2);
+          @include border-radius($border-radius-xs / 1.5);
+          opacity: .5;
+        }
+
+        &.Mui-selected,
+        &:hover {
+          color: $white !important;
+
+          & > span:not(.MuiTouchRipple-root) {
+            color: $white !important;
+          }
+
+          &::before {
+            @include border-radius($border-radius-sm);
+            opacity: 1;
+          }
+        }
+      }
+
+      &.tabs-bordered {
+        .MuiListItem-root.MuiListItem-button {
+          margin: ($layout-spacer / 4);
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+
+  @each $color, $value in $theme-colors {
+    &.nav-tabs-#{$color} {
+      &.nav-tabs {
+        .MuiListItem-root.MuiListItem-button {
+          &.Mui-selected {
+            color: $value;
+            border-top: $value solid 3px;
+
+            &:hover {
+              color: $value;
+            }
+          }
+        }
+      }
+
+      &.tabs-animated-line {
+        &.nav-tabs {
+          .MuiListItem-root.MuiListItem-button {
+              &.Mui-selected,
+              &:hover {
+                color: $value;
+
+                &::before {
+                  background: $value;
+                }
+              }
+          }
+        }
+      }
+
+      &.nav-line {
+        .MuiListItem-root.MuiListItem-button {
+          .divider {
+            background: $value;
+          }
+
+          &.Mui-selected,
+          &.Mui-selected:hover {
+            color: $value;
+          }
+        }
+      }
+
+      &.nav-tabs.tabs-animated-shadow {
+        .MuiListItem-root.MuiListItem-button {
+          color: $body-color;
+
+          &::before {
+            background: $value !important;
+            box-shadow: 0 16px 26px -10px rgba($value, 0.56),
+            0 4px 25px 0px rgba(0, 0, 0, 0.12),
+            0 8px 10px -5px rgba($value, 0.2);
+          }
+
+          &.Mui-selected,
+          &:hover {
+            color: color-yiq($value) !important;
+
+            & > span:not(.MuiTouchRipple-root) {
+              color: color-yiq($value) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Alternate
+
+.nav-link-icon {
+  width: $nav-item-icon-size;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: $font-size-lg;
+
+  & > svg {
+    width: 70%;
+  }
+}
+
+.Mui-selected > .nav-link-icon {
+  opacity: 1 !important;
+}
+
+.MuiList-root {
+
+  &.nav-list-square {
+    .MuiListItem-root.MuiListItem-button {
+      @include border-radius(0);
+    }
+  }
+
+  &.nav-pills {
+    .MuiListItem-root.MuiListItem-button {
+      @include border-radius($border-radius);
+    }
+  }
+
+  &.nav-lg {
+    .MuiListItem-root.MuiListItem-button {
+      padding: ($nav-link-padding-y * 1.5) ($nav-link-padding-x * 1.5);
+      position: relative;
+    }
+  }
+
+  &.nav-alt {
+    .MuiListItem-root.MuiListItem-button {
+      @include border-left-radius(0);
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        content: '';
+        transition: $transition-base;
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+      }
+
+      &.Mui-selected,
+      &:hover {
+        &::before {
+          opacity: 1;
+          height: 100%;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &.nav-pills-rounded {
+    .MuiListItem-root.MuiListItem-button {
+      @include border-radius($border-radius-lg * 2);
+    }
+  }
+}
+
+// Vertical colors
+
+@each $color, $value in $theme-colors {
+  .nav-neutral-#{$color} {
+    .MuiListItem-root.MuiListItem-button {
+        &.Mui-selected,
+        &:hover {
+          color: $value;
+          background: rgba($value, .05);
+
+          &::before {
+            background: $value;
+          }
+        }
+      }
+  }
+
+  .nav-#{$color} {
+    .MuiListItem-root.MuiListItem-button {
+        &.Mui-selected,
+        &:hover {
+          color: color-yiq($value);
+          background: $value;
+
+          &::before {
+            background: $value;
+          }
+        }
+      }
+  }
+}
+
+.MuiList-root.nav-transparent-alt {
+  .MuiListItem-root.MuiListItem-button {
+      &.Mui-selected,
+      &:hover {
+        background: transparent;
+        color: $primary;
+
+        &::before {
+          background: transparent;
+        }
+      }
+
+      &.text-white-50 {
+        &.Mui-selected,
+        &:hover {
+          color: $white !important;
+        }
+      }
+
+      &.text-black-50 {
+        &.Mui-selected,
+        &:hover {
+          color: $black !important;
+        }
+      }
+
+      .MuiTouchRipple-root {
+        opacity: 0;
+      }
+    }
+}
+

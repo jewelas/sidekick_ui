@@ -1,0 +1,91 @@
+//  Core
+body {
+  .accordion {
+    & > .card-box {
+      @include border-radius(0);
+
+      & > .MuiCard-root {
+        box-shadow: none !important;
+        @include border-radius(0 !important);
+
+        & > .card-header {
+          padding: 0;
+          border-bottom: 0;
+          @include border-radius(0);
+
+          & > .panel-title .accordion-toggle,
+          & > .panel-title {
+            width: 100%;
+          }
+
+          .MuiButton-root {
+            display: block;
+            width: 100%;
+            text-align: left;
+            border-bottom: transparent solid 1px;
+            background: $gray-200;
+
+            &:hover {
+              background: $gray-100 !important;
+              color: $black;
+            }
+
+            &:not(:disabled):hover {
+              transform: translateY(0px);
+            }
+
+            .accordion-icon {
+              transform: rotate(90deg);
+              transition: $transition-base;
+            }
+          }
+        }
+
+        .panel-body {
+          padding: 0;
+        }
+      }
+
+      &:first-of-type {
+        @include border-top-radius($card-border-radius !important);
+
+        .MuiCard-root {
+          @include border-top-radius($card-border-radius !important);
+        }
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 0;
+
+        .MuiCard-root {
+          @include border-radius(0);
+        }
+      }
+
+      &:last-of-type {
+        @include border-bottom-radius($card-border-radius !important);
+
+        .MuiCard-root {
+          @include border-bottom-radius($card-border-radius !important);
+        }
+      }
+
+      &.panel-open {
+        & > .MuiCard-root {
+          & > .card-header {
+
+            .MuiButton-root {
+              border-bottom-color: $card-border-color;
+              background: $card-bg;
+              color: $black;
+
+              .accordion-icon {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

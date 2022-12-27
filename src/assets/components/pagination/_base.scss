@@ -1,0 +1,75 @@
+//  Core
+
+.MuiPagination-root {
+  margin: 0;
+
+  .MuiPaginationItem-root {
+    @include border-radius($border-radius-xs !important);
+    margin: 0 ($spacer / 3.5);
+    transition: $transition-base;
+    position: relative;
+    font-weight: bold;
+    border-color: $gray-600;
+
+    padding: 0;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+
+    &.MuiPaginationItem-ellipsis {
+      background: transparent !important;
+      color: $gray-600 !important;
+    }
+
+    &:hover {
+      color: $primary;
+      transform: translateY(0px) !important;
+    }
+
+    &.Mui-selected {
+      box-shadow: $box-shadow-sm;
+    }
+
+    &.MuiPaginationItem-sizeSmall {
+      width: 26px;
+      min-width: 26px;
+      height: 26px;
+      line-height: 26px;
+    }
+
+    &.MuiPaginationItem-sizeLarge {
+      width: 48px;
+      min-width: 48px;
+      height: 48px;
+      line-height: 48px;
+    }
+
+    &.Mui-disabled {
+      opacity: .65;
+    }
+  }
+}
+
+// Color
+
+@each $color, $value in $theme-colors {
+  .MuiPagination-root.pagination-#{$color} {
+
+    .MuiPaginationItem-root {
+      &:hover {
+        color: $value;
+        background: rgba($value, .05);
+        border-color: $value;
+      }
+
+      &.Mui-selected {
+        background: $value;
+        color: color-yiq($value);
+        border-color: $value;
+        box-shadow: 0 0.313rem 0.8rem rgba($value, .5), 0 0.126rem 0.225rem rgba($value, .3)
+      }
+    }
+  }
+}

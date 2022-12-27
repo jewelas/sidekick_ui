@@ -1,0 +1,21 @@
+// Collapsed Sidebar
+
+.app-sidebar-collapsed {
+  .app-sidebar {
+
+    .app-sidebar--widget {
+      height: auto;
+      opacity: 1;
+      // visibility: hidden;
+    }
+
+    &:not(.app-sidebar--mini):hover {
+
+      .app-sidebar--widget {
+        height: auto;
+        opacity: 1;
+        // visibility: visible;
+      }
+    }
+  }
+}

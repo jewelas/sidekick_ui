@@ -1,0 +1,147 @@
+export default {
+  //CONTRACTS
+  MoonBuddy: {
+    56: '0x5755E18D86c8a6d7a6E25296782cb84661E6c106',
+    97: '0xDB2c58F86797BFbB4C26cB681e5f66f8626265ae'
+  },
+  RootedToken: {
+    56: '0x5755E18D86c8a6d7a6E25296782cb84661E6c106',
+    97: '0xDB2c58F86797BFbB4C26cB681e5f66f8626265ae'
+  },
+  MarketGeneration: {
+    // 56: '0x201437926C194d51686CdFB1b7Db8DEDa863C92d',
+    56: '0x052955037524DE7C1F24510A89978B4C5f5266BF',
+    97: '0x0Dacd56960E8F6A9fF3A4f94E7A2034B23e560D0'
+    // 97: '0x4fe1D850b59f4991cF46E96e9a144D9E73021617'
+  },
+  LazarusBurnPit: {
+    56: '0xba2316994d68845652d92ba582952fafe33c5994',
+    97: '0xba2316994d68845652d92ba582952fafe33c5994'
+  },
+  StakingToken: {
+    // 56: '0xaa295C644308F5bdFF1F872b0cCED346A00103aa',
+    56: '0xA74Ce0F84d3F6dF9DAe2967a8Cfa645bF6693195',
+    97: '0x1983911C7B5970bD209c62219159f1828aE14E4f'
+  },
+  MarketDistribution: {
+    // 56: '0xAeBF3a2FF50D23c9f45cccA889a542322F1f822C',
+    56: '0x556340611E11b85d54abDdaA658856F0c5Ce0a26',
+    97: '0x1ABab49aAD533951B20C9F384C27BEbe46b1fdBa'
+  },
+  PancakeRouter: {
+    //56: '0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F',
+    56: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
+    97: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1'
+  },
+  PancakeFactory: {
+    //56: '0xBCfCcbde45cE874adCB698cC183deBcF17952812',
+    56: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
+    97: '0x6725F303b657a9451d8BA641348b6761A6CC7a17'
+  },
+  wbnb: {
+    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    97: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+  },
+  usdt: {
+    56: '0x55d398326f99059ff775485246999027b3197955',
+    97: '0x55d398326f99059ff775485246999027b3197955',
+    137: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+    1: '1'
+  },
+  usdc: {
+    56: '0x55d398326f99059ff775485246999027b3197955',
+    97: '0x55d398326f99059ff775485246999027b3197955',
+    137: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+    1: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
+  },
+  ethereum: {
+    // wrapped
+    56: '0x55d398326f99059ff775485246999027b3197955',
+    97: '0x55d398326f99059ff775485246999027b3197955',
+    137: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+    1: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+  },
+  matic: {
+    // wrapped
+    56: '0x55d398326f99059ff775485246999027b3197955',
+    97: '0x55d398326f99059ff775485246999027b3197955',
+    137: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
+  },
+  mulltiCall: {
+    56: '0x1ee38d535d541c55c9dae27b12edf090c608e6fb',
+    97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412'
+  },
+  busd: {
+    56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    137: '0xdab529f40e671a1d4bf91361c21bf9f0c9712ab7'
+  },
+  DripToken: {
+    56: '0x20f663cea80face82acdfa3aae6862d246ce0333',
+    97: '0x20f663cea80face82acdfa3aae6862d246ce0333'
+  },
+  DripFountain: {
+    56: '0x4Fe59AdcF621489cED2D674978132a54d432653A',
+    97: ''
+  },
+  DripFaucet: {
+    56: '0x682D01dfE0b4D8B3A614487e1e3815E18fC3d4E0',
+    97: '0x682D01dfE0b4D8B3A614487e1e3815E18fC3d4E0'
+  },
+  Br34pToken: {
+    56: '0xa86d305a36cdb815af991834b46ad3d7fbb38523',
+    97: ''
+  },
+
+  //MATIC / FLOW CONTRACTS
+  FlowToken: {
+    56: '',
+    //97: '0x37CE17eA417d17f33207f3729C793BA0Dc59f66d'
+    //test contract for name service, switch back to above when testing flow
+    97: '0xbeb10ca0c8cc511407642871c20168729b02f392'
+  },
+
+  TokenMint: {
+    56: '',
+    97: '0x97E399eC80Ce47D5a339ceeB04181c7A194F97e3'
+  },
+  FlowVault: {
+    56: '',
+    97: '0xf318894BF2a9830A1659579b0393bfe6b090CFB7'
+  },
+  Faucet: {
+    56: '0xFFE811714ab35360b67eE195acE7C10D93f89D8C',
+    97: '0xf6B5B7cc91e2CD624fFAA581866D58d40E8c9DE1'
+  },
+  BuddySystem: {
+    56: '',
+    97: '0xfeFcE6c3D86C8943dc218f3b804501991C49e77a'
+  },
+
+  //Name System
+  NameSystem: {
+    //OUR SK Name service
+    56: '0x080af72c8D9c1d02E3de188Be770155A81119754',
+    //Below is gangster finance contract
+    //56: '0x7bE1aDbCDd63f3dBeAC6DD1B778d316856AD1725',
+    //97: '0xEDf1bBef97e20740cA4545A320955849191CE340'
+    //NEW testnet contract
+    97: '0xeF3484ad687810bB6f8947740A8b791bb9f63762'
+  },
+  GfiToken: {
+    56: '0xe727A157757f2d8400108063E9BF9e29EF725Ba6',
+    97: '0xe727A157757f2d8400108063E9BF9e29EF725Ba6'
+  },
+  //GFI VAult for staking xSK
+  GFIVault: {
+    56: '0x82a58Db1E81503658515b72F0f844531e14C76E0',
+    97: ''
+  },
+  //Subscription Contract for SK
+  Subscription: {
+    56: '0xfd947e1021Cf41A1BB63bb1bcc2F30774BEE4feB',
+    97: ''
+  },
+
+
+};

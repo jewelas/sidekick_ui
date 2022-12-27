@@ -1,0 +1,57 @@
+// Sidebar widget dark color scheme
+
+.app-sidebar {
+
+  &--overlay {
+    &:after {
+      content: '';
+      background: $black;
+      opacity: .45;
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    & > * {
+      z-index: 4;
+    }
+  }
+
+  &--dark {
+    .app-sidebar--widget {
+
+      .app-sidebar-spacer,
+      .text-first,
+      .text-primary,
+      .text-black {
+        color: $white !important;
+      }
+
+      .text-danger svg {
+        color: $white;
+      }
+
+      .badge {
+        background: rgba($white, .2) !important;
+        // color: $white !important;
+      }
+
+      .btn:active,
+      .btn:focus,
+      .btn {
+        box-shadow: none;
+        background: rgba($white, .08);
+        color: rgba($white, .7);
+        border-color: rgba($white, .12);
+
+        &:hover {
+          background: rgba($white, .12);
+          color: $white;
+        }
+      }
+    }
+  }
+}

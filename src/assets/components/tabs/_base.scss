@@ -1,0 +1,108 @@
+// Tabs
+
+// Variables
+
+$tabs-item-height:            42px;
+
+body {
+  .MuiTabs-root {
+    min-height: $tabs-item-height;
+    height: $tabs-item-height;
+    overflow: visible !important;
+
+    .MuiTabs-scroller {
+      overflow: visible !important;
+    }
+
+    .MuiTabs-flexContainer {
+      position: relative;
+      z-index: 6;
+      justify-content: space-between;
+    }
+
+    .MuiTab-root {
+      padding: 0 ($spacer * 1.5);
+      min-height: $tabs-item-height;
+      height: $tabs-item-height;
+      transition: $transition-base;
+      margin-right: ($spacer / 2);
+
+      &.MuiTab-font-sm {
+        font-size: $font-size-sm !important;
+      }
+
+      .MuiTouchRipple-root {
+        @include border-radius($border-radius-sm !important);
+      }
+
+      &.MuiTab-fullWidth {
+        margin: 0;
+        padding: 0 ($spacer);
+      }
+    }
+
+    .MuiTabs-indicator {
+      min-height: $tabs-item-height;
+      height: $tabs-item-height;
+      opacity: 1;
+      z-index: 4;
+      @include border-radius($border-radius-sm);
+      transition: $transition-base;
+    }
+
+    // Colors
+
+    @each $color, $value in $theme-colors {
+      &.nav-tabs-#{$color} {
+
+        .MuiTabs-indicator {
+          background: $value !important;
+          box-shadow: 0 16px 26px -10px rgba($value, 0.56),
+          0 4px 25px 0px rgba(0, 0, 0, 0.12),
+          0 8px 10px -5px rgba($value, 0.2);
+        }
+
+        .MuiTab-root {
+
+          &:hover {
+            color: $value;
+          }
+
+          &.Mui-selected {
+            color: color-yiq($value) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tabs-bordered {
+  position: relative;
+
+  &:after {
+    content: "";
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    position: absolute;
+    height: 1px;
+    background: $gray-400;
+  }
+}
+
+.tab-item-wrapper {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: $transition-base;
+
+  &.active {
+    opacity: 1;
+    height: auto;
+    overflow: auto;
+    visibility: visible;
+  }
+}

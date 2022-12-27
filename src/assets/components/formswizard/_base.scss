@@ -1,0 +1,24 @@
+// Steppers
+
+.MuiStepper-root.MuiStepper-alternativeLabel {
+  &.stepper-horizontal-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+
+    .MuiStepConnector-alternativeLabel {
+      top: 50%;
+      margin-top: -18px;
+    }
+
+    .MuiStepLabel-alternativeLabel {
+      font-size: $font-size-base;
+      color: $gray-800;
+    }
+  }
+
+  .MuiStepLabel-iconContainer.MuiStepLabel-alternativeLabel {
+    z-index: 5;
+  }
+}

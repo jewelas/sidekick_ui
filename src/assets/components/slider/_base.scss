@@ -1,0 +1,113 @@
+// Slider
+
+.MuiSlider-root {
+  .MuiSlider-rail {
+    height: 4px;
+    @include border-radius($border-radius-lg);
+    background: $gray-400;
+    opacity: 1;
+  }
+
+  .MuiSlider-track {
+    height: 4px;
+    @include border-radius($border-radius-lg);
+  }
+
+  .MuiSlider-valueLabel {
+    top: -28px;
+
+    & > span:first-child {
+      transform: none;
+      @include border-radius($border-radius-xs);
+      width: 50px;
+      height: 28px;
+
+      &::after {
+        position: absolute;
+        content: '';
+        border-color: transparent;
+        border-style: solid;
+        bottom: -5px;
+        margin-left: -5px;
+        border-width: 5px 5px 0;
+        left: 50%;
+        border-top-color: currentColor;
+      }
+
+      & > span:first-child {
+        transform: none;
+      }
+    }
+  }
+
+  .MuiSlider-thumb {
+    width: 16px;
+    height: 16px;
+    margin-top: -6px;
+    margin-left: -8px;
+    border: transparent solid 2px;
+    background: $white;
+  }
+
+  .MuiSlider-mark {
+    width: 4px;
+    height: 4px;
+    @include border-radius(20px);
+  }
+
+  &.MuiSlider-trackInverted {
+
+    .MuiSlider-mark {
+      background: $white;
+      opacity: .8;
+
+      &.MuiSlider-markActive {
+        opacity: 1;
+      }
+    }
+  }
+
+  .MuiSlider-markLabel {
+    font-size: $font-size-xs / 1.3;
+    font-weight: bold;
+    color: $gray-700;
+
+    &.MuiSlider-markLabelActive {
+      color: $black;
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    &.slider-#{$color} {
+      color: $value;
+
+      &.MuiSlider-trackInverted {
+
+        .MuiSlider-markActive {
+          background: $value;
+        }
+
+        .MuiSlider-track {
+          background: $value;
+        }
+      }
+
+      .MuiSlider-thumb {
+        border-color: $value;
+
+
+        &.Mui-focusVisible,
+        &:hover {
+          border-color: darken($value, 15%);
+          box-shadow: 0 0 0 6px rgba($value, 0.16);
+        }
+
+        &.MuiSlider-active {
+          box-shadow: 0 0.46875rem 2.1875rem rgba($value, .8), 0 0.125rem 0.5875rem rgba($value, .9);
+        }
+      }
+
+
+    }
+  }
+}

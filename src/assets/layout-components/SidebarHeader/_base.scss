@@ -1,0 +1,128 @@
+//  Core
+
+.app-sidebar {
+  &--header {
+    padding: 0 ($layout-spacer / 2);
+    min-height: $header-height;
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    //margin-bottom: ($layout-spacer / 4);
+
+    .expand-sidebar-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+   /* &::after {
+      content: "";
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      position: absolute;
+    }*/
+  }
+
+  .toggle-mobile-sidebar-btn {
+    display: none;
+    padding: 0;
+
+    .MuiButton-label {
+      display: flex;
+    }
+  }
+
+  // Responsive
+
+  @include media-breakpoint-down(xl) {
+    .toggle-mobile-sidebar-btn {
+      display: block;
+    }
+  }
+}
+
+// Logo wrapper
+
+.app-sidebar-logo {
+  // display: flex;
+  // align-items: center;
+  // transition: all 0.5s $app-sidebar-transition;
+  
+  @include media-breakpoint-down(small){
+    margin-top: .5rem;
+  }
+
+  &--icon {
+    @include border-radius($border-radius-sm);
+    // visibility: none;
+    // width: 40px;
+    // height: 40px;
+    // background: $white;
+    // display: flex;
+    // align-items: center;
+    // align-content: center;
+    // box-shadow: 1px 1px 3px rgba($black, .2);    
+
+    img {
+      width: 40px;
+      margin: 0 auto;
+      // animation: logo-spin infinite 20s linear;
+    }
+
+    @include media-breakpoint-down(xl) {
+      margin-top: 1px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  &--text {
+    line-height: 1;
+    padding: 0 0 0 ($spacer / 1.5);
+    transition: all 0.5s $app-sidebar-transition;
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-size: $font-size-sm / 1.2;
+      color: $white;
+      opacity: .7;
+      padding: 4px 0;
+    }
+
+    b {
+      font-size: $font-size-lg * 1.1;
+      font-weight: bold;
+      color: $white;
+      text-transform: lowercase;
+    }
+  }
+
+  &:hover {
+    color: $black;
+  }
+}
+
+@-webkit-keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Themes
+
+@import "themes/dark";
+@import "themes/light";
+
+// Modifiers
+
+@import "modifiers/collapsed";

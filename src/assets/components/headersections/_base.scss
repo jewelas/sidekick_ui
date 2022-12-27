@@ -1,0 +1,363 @@
+// Variables
+
+$app-sidebar-transition:    cubic-bezier(0.685, 0.0473, 0.346, 1);
+
+$header-height-sm: 64px;
+$header-height: 74px;
+$header-height-lg: 84px;
+$header-height-xl: 94px;
+
+$header-link-color-light: rgba($white, .8);
+$header-link-hover-color-light: $white;
+// $header-link-hover-bg-light: rgba($white, .15);
+
+
+$header-link-color-dark: rgba($black, .8);
+$header-link-hover-color-dark: $black;
+$header-link-hover-bg-dark: rgba($black, .07);
+
+//  Core
+
+.header-nav-wrapper {
+  min-height: $header-height;
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  & > .container {
+    align-items: center;
+    display: flex;
+  }
+
+  // Actions
+
+  .header-nav-actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  // Sizing
+
+  &.header-nav-wrapper-sm {
+    min-height: $header-height-sm;
+  }
+
+  &.header-nav-wrapper-lg {
+    min-height: $header-height-lg;
+  }
+
+  &.header-nav-wrapper-xl {
+    min-height: $header-height-xl;
+  }
+
+  // Responsive navigation
+
+  .nav-collapsed-wrapper {
+    position: absolute;
+    left: 5%;
+    top: 35px;
+    width: 90%;
+    background: $white;
+    z-index: 25;
+    @include border-radius($border-radius);
+    box-shadow: $box-shadow;
+  }
+}
+
+
+// Theming dark
+
+.navbar-dark {
+
+  ul {
+    & > li {
+      & > a {
+        color: rgba($white, .7);
+
+        &.active,
+        &:hover {
+          color: $white;
+          background: rgba($white, .15);
+        }
+      }
+
+      &:hover {
+        & > a {
+          color: $white;
+          background: rgba($white, .15);
+        }
+      }
+    }
+  }
+
+  .hamburger {
+
+    .hamburger-inner {
+      &,
+      &::before,
+      &::after {
+        background-color: $white;
+      }
+    }
+
+    &.is-active {
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+// Theming light
+
+.navbar-light {
+
+  ul {
+    & > li {
+      & > a {
+        color: rgba($black, .7);
+
+        &.active,
+        &:hover {
+          color: $black;
+          background: rgba($primary, .06);
+        }
+      }
+
+      &:hover {
+        & > a {
+          color: $black;
+          background: rgba($primary, .06);
+        }
+      }
+    }
+  }
+
+  .hamburger {
+
+    .hamburger-inner {
+      &,
+      &::before,
+      &::after {
+        background-color: rgba($black, .8);
+      }
+    }
+
+    &.is-active {
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+// Logo
+
+.app-nav-logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s $app-sidebar-transition;
+  &--icon {
+    @include border-radius($border-radius-sm);
+    width: 40px;
+    height: 40px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-shadow: 1px 1px 3px rgba($black, .2);
+
+    img {
+      width: 26px;
+      margin: 0 auto;
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+
+  &--text {
+    line-height: 1;
+    padding: 0 0 0 ($spacer / 1.5);
+    transition: all 0.5s $app-sidebar-transition;
+    color: $white;
+
+    img {      
+      width:200px;
+    }
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-size: $font-size-sm / 1.2;
+      opacity: .7;
+      padding: 4px 0;
+    }
+
+    b {
+      font-size: $font-size-lg * 1.1;
+      font-weight: bold;
+      text-transform: lowercase;
+    }
+  }
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.app-nav-logo--dark {
+  .app-nav-logo--icon {
+    border: rgba($black, .4) solid 1px;
+  }
+
+  .app-nav-logo--text {
+    color: $black;
+  }
+}
+
+@-webkit-keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Navigation menu
+
+.header-nav-menu {
+  flex: 2;
+  display: flex;
+
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      display: inline-flex;
+      margin: 0 4px;
+      position: relative;
+
+      .dropdown-arrow {
+        transform: rotate(0deg);
+        transition: $transition-base;
+        margin-left: 8px;
+        height: 16px;
+        line-height: 16px;
+        width: 10px;
+      }
+
+      .submenu-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 280px;
+        margin-left: -140px;
+        visibility: hidden;
+        opacity: 0;
+        padding-top: 15px;
+        transition: $transition-base;
+        z-index: 20;
+        transform: translateX(-18px) translateY(-18px) scale(.75);
+
+        &--sm {
+          width: 200px;
+          margin-left: -100px;
+        }
+
+        &--lg {
+          width: 420px;
+          margin-left: -210px;
+        }
+
+        &--xl {
+          width: 640px;
+          margin-left: -320px;
+        }
+
+        &--xxl {
+          width: 940px;
+          margin-left: -470px;
+        }
+      }
+
+      & > a {
+        transition: $transition-base;
+        padding: ($spacer / 1.5) ($spacer * 1.5);
+        display: flex;
+        align-items: center;
+      }
+
+      &:hover {
+
+        & > a {
+          & > .dropdown-arrow {
+            transform: rotate(-180deg);
+          }
+        }
+
+        & > .submenu-dropdown {
+          opacity: 1;
+          transform: translateX(0px) translateY(0px) scale(1);
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+// Nav page menu collapsed
+
+.MuiButton-root.nav-toggle-inner-btn {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.collapse-page-trigger {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  transition: $transition-base;
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-collapsed-wrapper.MuiCollapse-entered {
+  .nav-toggle-inner-btn {
+    opacity: 1;
+    visibility: visible;
+    animation-delay: 2s;
+  }
+}
+
+

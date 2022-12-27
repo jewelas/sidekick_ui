@@ -1,0 +1,195 @@
+// Switch
+body {
+  .MuiSwitch-root {
+    padding: 0;
+    @include border-radius(50px);
+    transition: $transition-base;
+    overflow: visible;
+
+    .MuiSwitch-track {
+      @include border-radius(50px);
+      background-color: $gray-200;
+      border: $gray-600 solid 1px;
+      transition: $transition-base;
+    }
+
+    &:hover {
+      box-shadow: 0 0.16875rem 0.1875rem rgba($black, .05), 0 0.125rem 0.1275rem rgba($black, .06);
+
+      .MuiSwitch-switchBase:not(.Mui-disabled) {
+        .MuiSwitch-thumb {
+          transform: scale(1.1);
+          animation-name: SwitchOn;
+        }
+
+        & + .MuiSwitch-track {
+          border-color: $gray-700;
+        }
+      }
+    }
+
+    .MuiSwitch-switchBase {
+      padding: 0;
+      top: 2px;
+      transform: translateX(2px);
+
+      &.Mui-checked {
+        transform: translateX(28px);
+      }
+
+      .MuiIconButton-label {
+
+      }
+
+      .MuiIconButton-label,
+      .MuiSwitch-thumb {
+        width: 100%;
+        height: 100%;
+      }
+
+      .MuiSwitch-thumb {
+        background: $white;
+
+        background: -webkit-gradient(linear, left top, left bottom, from($white), to($gray-100));
+        background: -webkit-linear-gradient(top, $white, $gray-100);
+        background: linear-gradient(180deg, $white 0, $gray-100);
+        background-size: 100% 100%;
+        box-shadow: inset 0 1px 1px $white, 0 1px 3px rgba(0, 0, 0, .25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transform: scale(1);
+        transition: all .3s cubic-bezier(0.35, 0, 0.25, 1);
+        animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+        animation-duration: .3s;
+        animation-name: SwitchOff;
+      }
+
+      & + .MuiSwitch-track {
+        opacity: 1;
+      }
+    }
+
+    &.switch-small {
+      height: 22px;
+      width: 44px;
+      margin-right:5px;
+
+      .MuiSwitch-switchBase {
+        height: 18px;
+        width: 18px;
+
+        &.Mui-checked {
+          transform: translateX(24px);
+        }
+      }
+    }
+
+    &.switch-medium {
+      height: 32px;
+
+      .MuiSwitch-switchBase {
+        height: 28px;
+        width: 28px;
+      }
+    }
+
+    &.switch-large {
+      height: 42px;
+      width: 84px;
+
+      .MuiSwitch-switchBase {
+        height: 38px;
+        width: 38px;
+
+        &.Mui-checked {
+          transform: translateX(44px);
+        }
+      }
+    }
+
+    &.toggle-switch-line {
+      height: 8px !important;
+
+      .MuiSwitch-switchBase {
+        top: -10px;
+      }
+
+      &.switch-large {
+        .MuiSwitch-switchBase {
+          top: -16px;
+        }
+      }
+
+      &.switch-small {
+        .MuiSwitch-switchBase {
+          top: -5px;
+        }
+      }
+
+      .MuiSwitch-track {
+        height: 8px;
+      }
+    }
+
+    &.toggle-switch-square {
+      .MuiSwitch-track {
+        @include border-radius($border-radius-sm);
+      }
+
+      .MuiSwitch-thumb {
+        @include border-radius($border-radius-sm);
+      }
+    }
+
+    // Colors
+
+    @each $color, $value in $theme-colors {
+      &.toggle-switch-#{$color} {
+
+        &:hover {
+          .MuiSwitch-track {
+            border-color: $value;
+          }
+        }
+
+        .Mui-checked {
+          color: $value;
+
+          & + .MuiSwitch-track {
+            background: $value;
+            border-color: $value;
+          }
+        }
+      }
+    }
+
+    &.Mui-disabled {
+      .MuiSwitch-track {
+        background: $gray-600;
+      }
+    }
+  }
+}
+
+@keyframes SwitchOn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes SwitchOff {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

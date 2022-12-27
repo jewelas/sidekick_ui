@@ -1,0 +1,34 @@
+//  Core
+
+
+// Dropdown menu
+
+.MuiMenu-paper {
+
+  & .bg-composed-wrapper {
+    margin: (-($dropdown-padding-y)) -1px -2px;
+    z-index: 5;
+    top: -1px;
+  }
+
+  & .scroll-area {
+    height: 10rem;
+  }
+}
+
+.dropdown-menu-lg {
+  width: 15rem;
+}
+
+.dropdown-menu-xl {
+  width: 21rem;
+}
+
+.dropdown-menu-xxl {
+  width: 30rem;
+}
+
+.dropdown-toggle::after {
+  position: relative;
+  top: 2px;
+}

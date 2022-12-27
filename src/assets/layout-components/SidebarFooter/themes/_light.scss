@@ -1,0 +1,39 @@
+// Sidebar light
+
+.app-sidebar {
+  &--light {
+    .app-sidebar--footer {
+      background: rgba($primary, .025);
+      box-shadow: 0 -0.46875rem 0.1375rem rgba($gray-600, .08),
+      0 -0.9375rem 0.32625rem rgba($gray-600, .08),
+      0 -0.25rem 0.12125rem rgba($gray-600, .15),
+      0 -0.125rem 0.0775rem rgba($gray-600, .08);
+
+      .MuiButton-root {
+        color: rgba($primary, .7);
+
+        svg {
+          fill: rgba($primary, .7);
+        }
+
+        &.active,
+        &:active,
+        &:focus,
+        &:hover {
+          color: $primary;
+          background: rgba($primary, .1);
+
+          svg {
+            fill: rgba($primary, 1);
+          }
+        }
+      }
+
+      ul {
+        li {
+          border-right-color: rgba($primary, .1);
+        }
+      }
+    }
+  }
+}

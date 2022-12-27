@@ -1,0 +1,17 @@
+// Collapsed Sidebar
+@include media-breakpoint-up(xs) {
+  .app-sidebar-collapsed {
+    .app-sidebar {
+     /* width: $sidebar-width-collapsed;
+      position: fixed;
+      left: 0;
+      display: flex;*/
+
+      &:hover:not(.app-sidebar--mini) { /*ALAN*/
+        width: $sidebar-width;
+        position: fixed;
+        box-shadow: $sidebar-shadow;
+      }
+    }
+  }
+}

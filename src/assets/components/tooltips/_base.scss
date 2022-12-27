@@ -1,0 +1,21 @@
+
+//  Core
+
+.MuiTooltip-tooltip {
+  box-shadow: $box-shadow-sm;
+}
+
+.tooltip-lg {
+  width: $tooltip-max-width * 1.5;
+}
+
+@each $color, $value in $theme-colors {
+  .MuiTooltip-tooltip.tooltip-#{$color} {
+    background: $value;
+    color: color-yiq($value);
+
+    .MuiTooltip-arrow {
+      color: $value;
+    }
+  }
+}
