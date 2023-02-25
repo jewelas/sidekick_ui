@@ -72,7 +72,7 @@ export default function TransactionAccordions(props) {
                                                         <div className="text-left mr-3">
                                                             <div className="font-weight-bold">
                                                                 <div className="text-green d-block mb-1 text-uppercase font-weight-bold">
-                                                                    <StringComponent string={defiStrings.string1}/>
+                                                                    <StringComponent string={defiStrings.string1} />
                                                                 </div>
                                                                 <div className="font-size-xxl mt-1 text-white" >
                                                                     ${obj.totalAmountBuy}
@@ -80,7 +80,7 @@ export default function TransactionAccordions(props) {
                                                                 <div className="mt-1 text-white" >
                                                                     ({obj.totalTokensBuy})
                                                                 </div>
-                                                            </div>                                    
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -91,7 +91,7 @@ export default function TransactionAccordions(props) {
                                                         <div className="text-left">
                                                             <div className="font-weight-bold">
                                                                 <div className="textRed d-block mb-1 text-uppercase font-weight-bold">
-                                                                <StringComponent string={defiStrings.string2}/>
+                                                                    <StringComponent string={defiStrings.string2} />
                                                                 </div>
                                                                 <div className="font-size-xxl mt-1 text-white" >
                                                                     ${obj.totalAmountSold}

@@ -82,7 +82,6 @@ export default function StockChart(props) {
         fullscreen: options.fullscreen,
         autosize: options.autosize,
         studies_overrides: options.studiesOverrides,
-        // toolbar_bg: '#232a32',
         study_count_limi: 2,
         disabled_features: [
           'header_symbol_search',
