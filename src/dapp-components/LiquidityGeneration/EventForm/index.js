@@ -62,7 +62,6 @@ export default function LivePreviewExample() {
                           prefix=""
                           suffix=""
                         />
-                {/* {web3.utils.fromWei(wallet.balance)} */}{' '}
                 <small>
                   <sup>BNB</sup>
                 </small>
