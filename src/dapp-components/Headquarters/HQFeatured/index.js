@@ -27,10 +27,6 @@ export default function HQFeatured(props) {
                 </Grid>
                 <Grid item xs={12}>
                     <Button
-                        // size="large"
-                        // fullWidth={true}
-                        //disabled={!isApproved}
-                        //onClick={}
                         className="font-weight-bold shadow-black-lg btn-second text-first">
                         <div className='d-flex justify-content-between'>
                             <div className="mr-2" style={{alignSelf: 'center'}}>FEATURE YOUR TOKEN</div>
