@@ -50,7 +50,6 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 const getString = (jsonPath, langaugeId) => {
-  //console.log(Strings);
   return jsonPath[langaugeId] === '' ? jsonPath[1] : jsonPath[langaugeId];
 }
 
