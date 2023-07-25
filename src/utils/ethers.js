@@ -17,7 +17,6 @@ const getContract = (address, abi, wallet) =>
     if (window.ethereum) {
       if (window.ethereum.selectedAddress) {
         let provider = await detectProvider();
-        //  await provider.request({ method: 'eth_requestAccounts' });
         const chainId = parseInt(provider.chainId);
         if (chainId === 56) {
           await request(provider);
